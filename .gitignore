@@ -2,3 +2,4 @@
 assets/*.response.json
 assets/*.payload.json
 assets/*.headers
+assets/*.meta.txt
