@@ -1,1 +1,4 @@
 .DS_Store
+assets/*.response.json
+assets/*.payload.json
+assets/*.headers
