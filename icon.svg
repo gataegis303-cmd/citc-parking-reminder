@@ -1,5 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="116" fill="#0f766e"/>
-  <path fill="#ffffff" d="M145 363V132h122c52 0 91 35 91 83s-39 83-91 83h-57v65h-65Zm65-121h52c21 0 35-11 35-27s-14-27-35-27h-52v54Z"/>
-  <path fill="#fbbf24" d="M339 333a35 35 0 1 1 70 0 35 35 0 0 1-70 0Zm26-154h20l15 116h-50l15-116Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="CITC Parking">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="42" x2="426" y2="468" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#282828"/>
+      <stop offset="0.48" stop-color="#0d0d0e"/>
+      <stop offset="1" stop-color="#040404"/>
+    </linearGradient>
+    <linearGradient id="hot" x1="132" y1="98" x2="390" y2="404" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffba3a"/>
+      <stop offset="0.45" stop-color="#ff7a1a"/>
+      <stop offset="1" stop-color="#e3342f"/>
+    </linearGradient>
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 1 0 0.35 0 0 0.34 0 0 0.1 0 0 0 0 0 0.7 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <path fill="url(#bg)" d="M116 24h280l92 92v280l-92 92H116l-92-92V116L116 24Z"/>
+  <path fill="none" stroke="#f2f2ed" stroke-opacity=".18" stroke-width="12" d="M128 54h256l74 74v256l-74 74H128l-74-74V128l74-74Z"/>
+  <path fill="#e3342f" d="M396 24h-74l166 166v-74L396 24Z"/>
+  <path fill="#ff8a1c" d="M24 322v74l92 92h74L24 322Z"/>
+
+  <g opacity=".24" stroke="#f2f2ed" stroke-width="5">
+    <path d="M92 156h328"/>
+    <path d="M92 356h328"/>
+    <path d="M156 92v328"/>
+    <path d="M356 92v328"/>
+  </g>
+
+  <path fill="none" stroke="url(#hot)" stroke-width="20" filter="url(#glow)" d="M154 326V170h95c47 0 82 30 82 72s-35 72-82 72h-45v12h-50Zm50-58h42c20 0 33-10 33-26s-13-26-33-26h-42v52Z"/>
+  <path fill="#f2f2ed" d="M154 326V170h95c47 0 82 30 82 72s-35 72-82 72h-45v12h-50Zm50-58h42c20 0 33-10 33-26s-13-26-33-26h-42v52Z"/>
+
+  <g font-family="Arial Narrow, Helvetica, sans-serif" font-weight="900" letter-spacing="2">
+    <text x="256" y="396" text-anchor="middle" fill="#ff8a1c" font-size="54">CITC</text>
+    <text x="256" y="430" text-anchor="middle" fill="#f2f2ed" fill-opacity=".72" font-size="24">PARKING OPS</text>
+  </g>
+
+  <path fill="#ffba3a" d="M374 136h28l18 116h-64l18-116Z"/>
+  <circle cx="388" cy="293" r="31" fill="#ffba3a"/>
 </svg>
