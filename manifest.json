@@ -1,0 +1,18 @@
+{
+  "name": "CITC 停车行动终端",
+  "short_name": "CITC 停车",
+  "description": "CITC 停车行动终端：根据入场时间计算免费停车挪车提醒，保护午睡时间。",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b0b0c",
+  "theme_color": "#111111",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

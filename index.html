@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="停车提醒">
+  <title>停车提醒</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero" aria-labelledby="app-title">
+      <div>
+        <p class="eyebrow">CITC / PARKING OPS</p>
+        <h1 id="app-title">停车行动终端</h1>
+      </div>
+      <div class="status-pill" id="day-status">未开始</div>
+    </section>
+
+    <section class="primary-panel" aria-live="polite">
+      <div class="timer-ring" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+          <circle class="ring-progress" id="ring-progress" cx="60" cy="60" r="52"></circle>
+        </svg>
+        <div class="ring-copy">
+          <span id="countdown-label">今天还未开始</span>
+          <strong id="countdown-time">--:--</strong>
+        </div>
+      </div>
+      <div class="next-card">
+        <span>NEXT DIRECTIVE</span>
+        <strong id="next-action">到公司后开始计时</strong>
+        <small id="next-detail">默认按当前时间入场，也可以手动修改。</small>
+      </div>
+    </section>
+
+    <section class="actions" aria-label="主要操作">
+      <button class="button button-primary" id="start-now">我已入场，现在开始计时</button>
+      <button class="button button-secondary" id="confirm-moved" disabled>已完成挪车，重新计时</button>
+      <button class="button button-ghost" id="finish-day" disabled>结束今天</button>
+    </section>
+
+    <section class="controls" aria-label="停车参数">
+      <div class="section-kicker">CONFIG</div>
+      <label>
+        入场 / 重新入场时间
+        <input id="entry-time" type="time" value="08:00">
+      </label>
+      <div class="control-grid">
+        <label>
+          免费时长
+          <select id="free-hours">
+            <option value="3" selected>3 小时</option>
+            <option value="2.5">2.5 小时</option>
+            <option value="2">2 小时</option>
+          </select>
+        </label>
+        <label>
+          提前提醒
+          <select id="lead-minutes">
+            <option value="10">10 分钟</option>
+            <option value="15" selected>15 分钟</option>
+            <option value="20">20 分钟</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="timeline-section" aria-labelledby="timeline-title">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker">MISSION QUEUE</div>
+          <h2 id="timeline-title">今日行动序列</h2>
+        </div>
+        <button class="link-button" id="download-ics" disabled>加入日历</button>
+      </div>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <section class="shortcut-section" aria-labelledby="shortcut-title">
+      <div class="section-kicker">AUTO TRIGGER</div>
+      <h2 id="shortcut-title">iPhone 自动化</h2>
+      <div class="shortcut-list">
+        <div>
+          <strong>到达公司</strong>
+          <span>快捷指令打开这个页面，点开始停车。</span>
+        </div>
+        <div>
+          <strong>离开公司</strong>
+          <span>快捷指令打开结束链接，或提醒你结束今天。</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="timeline-item-template">
+    <li>
+      <time></time>
+      <div>
+        <strong></strong>
+        <span></span>
+      </div>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
